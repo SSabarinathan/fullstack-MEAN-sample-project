@@ -18,6 +18,12 @@ class CartController {
     const cartBuy= await cartService.cartBuy(id);    
     res.send(cartBuy);
   }
+
+  public async cartDeleteFE(req:Request, res:Response){
+    const id= req.params._id;
+    const cartDelete= await cartService.cartDelete(id);
+    res.send(cartDelete);
+  }
   
 }
 
