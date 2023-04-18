@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { loginService } from "../services/login.service";
 
-class LoginController{
+class Login{
     public async login(req: Request, res: Response){
         const login= await loginService.login(req.body);
-        console.log(login);
+        // console.log(login);
         
         res.send(login)
     }
 }
 
-export const loginController= new LoginController()
+export const loginController= new Login()

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { mobileDetailService } from "../services/mobile.service";
 
-class MobileDetailsController {
-  public async mobileViewFE(req: Request, res: Response) {
+class MobileDetails {
+  public async viewMobile(req: Request, res: Response) {
     const mobileView = await mobileDetailService.mobileView();
     res.send(mobileView);
   }
 }
 
-export const mobileDetailsController = new MobileDetailsController();
+export const mobileDetailsController = new MobileDetails();

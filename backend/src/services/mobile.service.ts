@@ -9,4 +9,4 @@ class MobileService {
 
 export const mobileDetailService = new MobileService();
 
-export const mobileViewFE = new MobileService();
+export const viewMobile = new MobileService();

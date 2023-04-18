@@ -10,4 +10,4 @@ class LaptopService {
 
 export const laptopDetailService = new LaptopService();
 
-// export const laptopViewFE = new LaptopService();
+// export const viewLaptop = new LaptopService();

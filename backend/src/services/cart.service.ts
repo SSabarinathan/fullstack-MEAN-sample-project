@@ -1,32 +1,32 @@
 import { cartDetail } from "../models/cart.models";
 
-
 class CartService {
   //inserting data
-  async cartAdd(data:any){
-    const cartAdd=await cartDetail.insertMany(data);
+  async cartAdd(data: any) {
+    const cartAdd = await cartDetail.insertMany(data);
     return cartAdd;
   }
- //to view the data
-  async cartView() {
+  //to view the data
+  async viewCart() {
     const cartDetails = await cartDetail.find({});
     return cartDetails;
   }
   //to buy the data
-  async cartBuy(id:any){
-
-    const cartBuy= await cartDetail.deleteOne(id);    
-    return cartBuy;
+  async buyProducts(id: any) {
+    const buyProducts = await cartDetail.deleteOne(id);
+    return buyProducts;
+  }
+  //to delete the data
+  async deleteCart(id: any) {
+    const deleteCart = await cartDetail.deleteOne(id);
+    return deleteCart;
   }
 
-//to delete the data
-  async cartDelete(id:any){
-
-    const cartDelete= await cartDetail.deleteOne(id);    
-    return cartDelete;
+  // //update cart price
+  async updatePrice(id: any) {
+    const updatePrice = await cartDetail.updateOne({ id }, { $inc: {} });
+    return updatePrice;
   }
-
-
 }
 
 export const cartService = new CartService();

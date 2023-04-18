@@ -14,3 +14,8 @@ const cartDetails = new Schema({
 });
 
 export const cartDetail = mongoose.model("cart", cartDetails, "cart");
+
+
+// userId:
+// mobile:[{Id: , qty: }]
+// laptop:[{Id: , qty: }]
