@@ -27,23 +27,18 @@ mongoose.connect("mongodb://127.0.0.1:27017/eShoppingApp").then(() => {
   app.listen(port, () => {
     console.log("Running on the port ", { port });
   });
-});
+ 
+}) ;
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+// .catch(err => {
+//     console.error("Connection error", err);
+//     process.exit();
+//   });
 
 //git comments to save
 //git add .

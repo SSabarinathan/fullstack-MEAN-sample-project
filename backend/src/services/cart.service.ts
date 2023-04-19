@@ -27,6 +27,8 @@ class CartService {
     const updatePrice = await cartDetail.updateOne({ id }, { $inc: {} });
     return updatePrice;
   }
+
+  
 }
 
 export const cartService = new CartService();

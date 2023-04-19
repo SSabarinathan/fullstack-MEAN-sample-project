@@ -23,6 +23,9 @@ class CartPage {
     const deleteCart = await cartService.deleteCart(id);
     res.send(deleteCart);
   }
+
+
+  
 }
 
 export const cartController = new CartPage();
