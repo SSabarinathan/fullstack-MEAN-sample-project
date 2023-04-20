@@ -3,8 +3,12 @@ import { cartService } from "../services/cart.service";
 
 class CartPage {
   public async addCart(req: Request, res: Response) {
-    const cartAdd = await cartService.cartAdd(req.body);
-    res.send(cartAdd);
+    try {
+      const cartAdd = await cartService.cartAdd(req.body);
+      res.send(cartAdd);
+    } catch (err) {
+      res.send(err);
+    }
   }
 
   public async viewCart(req: Request, res: Response) {
@@ -23,9 +27,6 @@ class CartPage {
     const deleteCart = await cartService.deleteCart(id);
     res.send(deleteCart);
   }
-
-
-  
 }
 
 export const cartController = new CartPage();

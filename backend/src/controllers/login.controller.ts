@@ -1,16 +1,20 @@
+import cookieParser from "cookie-parser";
+import express from "express";
+
 import { Request, Response } from "express";
 import { loginService } from "../services/login.service";
-import { signAccessToken } from "../services/jwt.service";
-import { text } from "body-parser";
+import { JWT } from "../services/jwt.service";
+
+const app = express();
+app.use(cookieParser());
 
 class Login {
   public async login(req: Request, res: Response) {
     const login = await loginService.login(req);
-    
-    const jwt= await signAccessToken.signAccessTokens(req.body.text);
+
+    const jwt = await JWT.generateToken(req.body.text);
     console.log(jwt);
-    
-    res.send(login);
+    res.send({ token: jwt });
   }
 }
 
