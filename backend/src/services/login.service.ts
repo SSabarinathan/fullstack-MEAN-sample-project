@@ -1,16 +1,25 @@
-import {loginDetails} from '../models/login.models';
+import { newUser } from "../models/newUser.model";
 
-class LoginService{
-    
-    async login(data:any){
-        const loginUsers= await loginDetails.find({"text":data.body.text});  
-              
-        return loginUsers;
-    }   
+class LoginPage {
+  async loginCheck(data: any) {
+    try {
+      const text = data.text;
+      const password = data.password;
 
+      const validUser = await newUser.findOne({ text });
+      const validEmail = await newUser.findOne({ password });
 
-    
+      if (validUser && validEmail) {
+        return validEmail;
+      } else {
+        return "User not found!";
+      }
+    } catch (err) {
+      return err;
+    }
 
+    // const loginUsers = await loginDetails.find({ text: data.body.text });
+    // return loginUsers;
+  }
 }
-
-export const loginService= new LoginService()
+export const loginService = new LoginPage();

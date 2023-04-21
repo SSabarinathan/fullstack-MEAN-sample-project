@@ -5,3 +5,5 @@ import { mobileDetailsController } from "../controllers/mobile.controller";
 export const mobileRouter = express.Router();
 
 mobileRouter.get("/", mobileDetailsController.viewMobile);
+
+
