@@ -5,10 +5,8 @@ class LoginPage {
     try {
       const text = data.text;
       const password = data.password;
-
       const validUser = await newUser.findOne({ text });
       const validEmail = await newUser.findOne({ password });
-
       if (validUser && validEmail) {
         return validEmail;
       } else {
@@ -17,9 +15,6 @@ class LoginPage {
     } catch (err) {
       return err;
     }
-
-    // const loginUsers = await loginDetails.find({ text: data.body.text });
-    // return loginUsers;
   }
 }
 export const loginService = new LoginPage();

@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken";
 const SECRET_KEY = "secretKeys";
 
 class JWToken {
-  //generating token
   generateToken = (userId: any) => {
     console.log(
       "----------------We are Inside the Token------------------------"
@@ -19,19 +18,6 @@ class JWToken {
       });
     });
   };
-
-  //verify token
-  // verifyToken = (req: any) => {
-  //   try {
-  //     const token = req.headers("Authorization");
-  //     console.log("the check token is ", token);
-
-  //     const decoded = jwt.verify(token, SECRET_KEY);
-  //     return decoded;
-  //   } catch (error) {
-  //     return null;
-  //   }
-  // };
 }
 
 export const verifyToken = (req: any, res: any, next: any) => {
@@ -52,31 +38,3 @@ export const verifyToken = (req: any, res: any, next: any) => {
 
 export const verifiedToken = { verifyToken };
 export const JWT = new JWToken();
-
-// const verifyToken= (req, res, next)=>{
-
-// if (!req.headers["authorization"]) {
-//     console.log("No header found");
-//   }
-//   const authHeader = req.headers["authorization"];
-//   const bearerToken = authHeader.split("");
-//   const token = bearerToken[1];
-//   jwt.verify(token, SECRET_KEY, (err: any, payload: any) => {
-//     if (err) {
-//       console.log("x1");
-//     }
-//     req.payload = payload;
-//     next();
-//   });
-// }
-
-//verifyToken inside
-//  try {
-//       const token = req.headers("Authorization");
-//       console.log("the check token is ", token);
-
-//       const decoded = jwt.verify(token, SECRET_KEY);
-//       return decoded;
-//     } catch (error) {
-//       return null;
-//     }

@@ -5,5 +5,4 @@ const LoginDetails = new Schema({
   password: String,
 });
 
-
-export const loginDetails= mongoose.model('login', LoginDetails, 'login')
+export const loginDetails = mongoose.model("login", LoginDetails, "login");

@@ -8,4 +8,3 @@ cartRouter.post("/",verifiedToken.verifyToken, cartController.addCart);
 cartRouter.get("/",verifiedToken.verifyToken, cartController.viewCart);
 cartRouter.delete("/:id", cartController.buyProductsInCart);
 cartRouter.delete("/:id", cartController.deleteCart);
-// cartRouter.put("/:id",cartController.updatePrice )

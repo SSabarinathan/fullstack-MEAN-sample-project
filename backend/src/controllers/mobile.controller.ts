@@ -7,10 +7,6 @@ class MobileDetails {
     const mobileView = await mobileDetailService.mobileView();
     res.send(mobileView);
   }
-
- 
-  
-
 }
 
 export const mobileDetailsController = new MobileDetails();

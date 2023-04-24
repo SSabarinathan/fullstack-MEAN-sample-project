@@ -15,19 +15,15 @@ const app = express();
 app.use(json());
 app.use(cors());
 dotenv.config();
-// app.use(unless);
-//routing
 
+//routing
 app.use("/newUser", newUserRouter);
 app.use("/mobile", mobileRouter);
 app.use("/laptop", laptopRouter);
 app.use("/login", loginRouter);
 app.use("/cart", cartRouter);
 
-// app.use(verifyToken);
-
 const excludePath = ["/newUser", "/login","/cart"];
-
 const auth: any = verifyToken;
 auth.unless = unless;
 app.use(
@@ -43,6 +39,24 @@ mongoose.connect("mongodb://127.0.0.1:27017/eShoppingApp").then(() => {
     console.log("Running on the port ", { port });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // .catch(err => {
 //     console.error("Connection error", err);
