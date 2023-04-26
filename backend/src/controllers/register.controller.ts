@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { newUserService } from "../services/newUser.service";
+import { newUserService } from "../services/register.service";
 
 class NewUser {
   public async newUser(req: Request, res: Response) {

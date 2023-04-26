@@ -16,17 +16,19 @@ class CartPage {
     res.send(viewCart);
   }
 
-  public async buyProductsInCart(req: Request, res: Response) {
+  public async clearCart(req: Request, res: Response) {
     const id = req.params._id;
     const buyProducts = await cartService.buyProducts(id);
-    res.send(buyProducts);
+    res.send(buyProducts);    
   }
 
-  public async deleteCart(req: Request, res: Response) {
-    const id = req.params._id;
-    const deleteCart = await cartService.deleteCart(id);
-    res.send(deleteCart);
-  }
+  // public async deleteCart(req: Request, res: Response) {
+  //   const id = req.params._id;
+  //   const deleteCart = await cartService.deleteCart(id);
+  //   res.send(deleteCart);
+  //   console.log("delete Cart");
+    
+  // }
 }
 
 export const cartController = new CartPage();

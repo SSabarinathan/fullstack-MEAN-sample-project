@@ -1,4 +1,4 @@
-import { newUser } from "../models/newUser.model";
+import { newUser } from "../models/register.model";
 
 class LoginPage {
   async loginCheck(data: any) {

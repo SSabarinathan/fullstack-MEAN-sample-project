@@ -1,6 +1,6 @@
 import { cartDetail } from "../models/cart.models";
 
-class CartService {
+class Cart{
   async cartAdd(data: any) {
     const cartAdd = await cartDetail.insertMany(data);
     return cartAdd;
@@ -22,4 +22,4 @@ class CartService {
   }
 }
 
-export const cartService = new CartService();
+export const cartService = new Cart();

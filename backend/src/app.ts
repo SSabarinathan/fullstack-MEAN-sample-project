@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { unless } from "express-unless";
 
-import { newUserRouter } from "./routes/newUser.route";
+import { newUserRouter } from "./routes/register.route";
 import { mobileRouter } from "./routes/mobile.route";
 import { laptopRouter } from "./routes/laptop.route";
 import { loginRouter } from "./routes/login.route";

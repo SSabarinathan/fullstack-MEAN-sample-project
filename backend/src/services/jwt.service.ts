@@ -36,5 +36,17 @@ export const verifyToken = (req: any, res: any, next: any) => {
   });
 };
 
-export const verifiedToken = { verifyToken };
 export const JWT = new JWToken();
+
+
+
+
+
+
+
+
+
+
+
+
+export const verifiedToken = { verifyToken };
